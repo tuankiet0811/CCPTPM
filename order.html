@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .order-container {
+            background-color: white;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+            margin-top: 0;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section h3 {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+        .order-summary {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .summary-total {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2rem;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        button.confirm-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button.confirm-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="order-container">
+        <h2>Thông tin giao hàng</h2>
+        
+        <form action="#" method="POST">
+            <div class="form-section">
+                <h3>Người nhận</h3>
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input type="text" id="name" name="name" value="Nguyễn Văn A" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" value="0901234567" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Địa chỉ nhận hàng</h3>
+                <div class="form-group">
+                    <label for="city">Tỉnh / Thành phố</label>
+                    <select id="city">
+                        <option>Hồ Chí Minh</option>
+                        <option>Hà Nội</option>
+                        <option>Đà Nẵng</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ cụ thể</label>
+                    <textarea id="address" placeholder="Số nhà, tên đường, phường/xã...">123 Đường ABC, Phường XYZ, Quận 1</textarea>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <h3>Tóm tắt đơn hàng</h3>
+                <div class="summary-row">
+                    <span>Tạm tính:</span>
+                    <span>1.550.000₫</span>
+                </div>
+                <div class="summary-row">
+                    <span>Phí vận chuyển:</span>
+                    <span>30.000₫</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Tổng thanh toán:</span>
+                    <span>1.580.000₫</span>
+                </div>
+            </div>
+
+            <button type="submit" class="confirm-btn">Xác nhận đặt hàng</button>
+        </form>
+    </div>
+</body>
+</html>
