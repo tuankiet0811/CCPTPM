@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt hàng</title>
+    <style>
+        :root {
+            --color-bg: #f0f2f5;
+            --color-card: #ffffff;
+            --color-primary: #007bff;
+            --color-success: #28a745;
+            --color-text: #333333;
+            --color-muted: #555555;
+            --color-border: #dddddd;
+        }
+        html, body {
+            margin: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--color-bg);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .order-container {
+            background-color: var(--color-card);
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: var(--color-text);
+            margin-top: 0;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        fieldset.form-section {
+            border: 0;
+            padding: 0;
+            margin: 0 0 20px;
+        }
+        legend {
+            font-size: 1.1rem;
+            color: var(--color-muted);
+            margin-bottom: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        input:focus-visible, textarea:focus-visible, select:focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 2px;
+            border-color: var(--color-primary);
+        }
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+        .order-summary {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .summary {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            row-gap: 10px;
+            column-gap: 16px;
+            color: var(--color-muted);
+        }
+        .summary-total {
+            font-weight: bold;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            border-top: 1px solid var(--color-border);
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        button.confirm-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--color-success);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button.confirm-btn:hover {
+            background-color: #218838;
+        }
+        button.confirm-btn:focus-visible {
+            outline: 3px solid var(--color-success);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="order-container">
+        <h2>Thông tin giao hàng</h2>
+        
+        <form action="#" method="POST">
+            <fieldset class="form-section">
+                <legend>Người nhận</legend>
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input type="text" id="name" name="name" value="Nguyễn Văn A" autocomplete="name" autocapitalize="words" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" value="0901234567" autocomplete="tel" inputmode="numeric" pattern="[0-9]{9,11}" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Địa chỉ nhận hàng</legend>
+                <div class="form-group">
+                    <label for="city">Tỉnh / Thành phố</label>
+                    <select id="city" name="city" autocomplete="address-level1" required>
+                        <option value="HoChiMinh">Hồ Chí Minh</option>
+                        <option value="HaNoi">Hà Nội</option>
+                        <option value="DaNang">Đà Nẵng</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ cụ thể</label>
+                    <textarea id="address" name="address" placeholder="Số nhà, tên đường, phường/xã..." autocomplete="street-address" required>123 Đường ABC, Phường XYZ, Quận 1</textarea>
+                </div>
+            </fieldset>
+
+            <div class="order-summary">
+                <h3>Tóm tắt đơn hàng</h3>
+                <dl class="summary">
+                    <dt>Tạm tính:</dt>
+                    <dd>1.550.000₫</dd>
+                    <dt>Phí vận chuyển:</dt>
+                    <dd>30.000₫</dd>
+                    <dt class="summary-total">Tổng thanh toán:</dt>
+                    <dd class="summary-total">1.580.000₫</dd>
+                </dl>
+            </div>
+
+            <button type="submit" class="confirm-btn">Xác nhận đặt hàng</button>
+        </form>
+    </div>
+</body>
+</html>

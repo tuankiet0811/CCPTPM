@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang cá nhân của bạn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .profile-card {
+            background-color: #fff;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        .card-header {
+            background-color: #4a90e2;
+            height: 120px;
+        }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            margin-top: -60px;
+            background-color: #ddd;
+            display: inline-block;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        h2 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        p {
+            color: #777;
+            margin: 5px 0 20px;
+        }
+        .btn-edit {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .btn-edit:hover {
+            background-color: #357abd;
+        }
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <div class="card-header"></div>
+        <!-- Dummy Avatar -->
+        <img src="https://via.placeholder.com/150" alt="Avatar" class="avatar">
+        <div class="card-body">
+            <h2>Nguyễn Văn A</h2>
+            <p>Thành viên thân thiết</p>
+            
+            <div class="info-list">
+                <div class="info-item">
+                    <span class="label">Email:</span>
+                    <span>nguyenvana@example.com</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Điện thoại:</span>
+                    <span>0901234567</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Ngày tham gia:</span>
+                    <span>01/01/2023</span>
+                </div>
+            </div>
+
+            <button class="btn-edit">Chỉnh sửa thông tin</button>
+        </div>
+    </div>
+</body>
+</html>
